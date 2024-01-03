@@ -175,6 +175,19 @@ class Base:
         command = "AT+QCCID"
         result = self.atcom.send_at_comm(command)
         return get_desired_data(result, "+QCCID: ")
+    
+    def get_module_imei(self):
+        """
+        Function for getting module IMEI
+
+        Returns
+        -------
+        dict
+            Result that includes "status", "response" and "value" keys
+        """
+        command = "AT+GSN"
+        result = self.atcom.send_at_comm(command)
+        return get_desired_data(result, "+GSN: ")
 
     ####################
     ### Modem Config ###

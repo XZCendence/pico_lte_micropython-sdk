@@ -55,29 +55,29 @@ class Debug:
     def debug(self, *args):
         """Function for DEBUG level messages."""
         if self.debug_enabled and self.debug_level <= DebugLevel.DEBUG:
-            self.print("DEBUG:", *args)
+            self.print("\033[94mDEBUG:", *args, "\033[0m")
 
     def info(self, *args):
         """Function for INFO level messages."""
         if self.debug_enabled and self.debug_level <= DebugLevel.INFO:
-            self.print("INFO:", *args)
+            self.print("\033[92mINFO:", *args, "\033[0m")
 
     def warning(self, *args):
         """Function for WARNING level messages."""
         if self.debug_enabled and self.debug_level <= DebugLevel.WARNING:
-            self.print("WARNING:", *args)
+            self.print("\033[93mWARNING:", *args, "\033[0m")
 
     def error(self, *args):
         """Function for ERROR level messages."""
         if self.debug_enabled and self.debug_level <= DebugLevel.ERROR:
-            self.print("ERROR:", *args)
+            self.print("\033[91mERROR:", *args, "\033[0m")
 
     def critical(self, *args):
         """Function for CRITICAL level messages."""
         if self.debug_enabled and self.debug_level <= DebugLevel.CRITICAL:
-            self.print("CRITICAL:", *args)
+            self.print("\033[91mCRITICAL:", *args, "\033[0m")
 
     def focus(self, *args):
         """Function for FOCUSSED level messages."""
         if self.debug_enabled and self.debug_level == DebugLevel.FOCUS:
-            self.print("FOCUS:", *args)
+            self.print("\033[95mFOCUSSED:", *args, "\033[0m")
